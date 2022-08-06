@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 class Pages extends BaseController {
     public function index() {
-        $data[ 'title' ] = ucfirst( $page );
-        return view( 'templates/header' ).view( 'pages/wtf', $data ).view( 'templates/footer' );
+        // $data[ 'title' ] = ucfirst( $page );
+        return view( 'templates/header' ).view( 'pages/welcome' ).view( 'templates/footer' );
         // return view( 'welcome_message' );
     }
 
