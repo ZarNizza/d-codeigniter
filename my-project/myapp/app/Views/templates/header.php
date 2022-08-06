@@ -17,10 +17,10 @@
                     <ul class="navbar-nav me-auto">
                        <!--  href may need    echo base_url('url');  -->
                       <li class="nav-item">
-                        <a class="nav-link" href="/pages/about">About</a>
+                        <a class="nav-link" href="/about">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/pages/home">pagesHome</a>
+                        <a class="nav-link" href="/home">pagesHome</a>
                       </li>
 
                     </ul>
