@@ -1,0 +1,94 @@
+CRITICAL - 2022-08-06 01:53:52 --> Invalid file: welc ome_message.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(9): view()
+ 4 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Home->index()
+ 5 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 03:39:25 --> Too few arguments to function App\Controllers\Pages::viewp(), 0 passed in /app/myapp/system/CodeIgniter.php on line 896 and exactly 1 expected
+in APPPATH/Controllers/Pages.php on line 6.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewp()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 03:40:13 --> Too few arguments to function App\Controllers\Pages::viewp(), 0 passed in /app/myapp/system/CodeIgniter.php on line 896 and exactly 1 expected
+in APPPATH/Controllers/Pages.php on line 6.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewp()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 03:41:33 --> Too few arguments to function App\Controllers\Pages::viewp(), 0 passed in /app/myapp/system/CodeIgniter.php on line 896 and exactly 1 expected
+in APPPATH/Controllers/Pages.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewp()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 03:42:56 --> Undefined property: App\Controllers\Pages::$load
+in APPPATH/Controllers/Pages.php on line 19.
+ 1 APPPATH/Controllers/Pages.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewp()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 03:50:26 --> Undefined property: App\Controllers\Pages::$load
+in APPPATH/Controllers/Pages.php on line 19.
+ 1 APPPATH/Controllers/Pages.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewp()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 03:59:26 --> Undefined property: App\Controllers\Pages::$load
+in APPPATH/Controllers/Pages.php on line 19.
+ 1 APPPATH/Controllers/Pages.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->getView()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 04:08:59 --> Call to undefined function App\Controllers\show_404()
+in APPPATH/Controllers/Pages.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewpage()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 05:16:12 --> Call to undefined function App\Controllers\show_404()
+in APPPATH/Controllers/Pages.php on line 15.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewpage()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 05:29:28 --> Call to undefined function App\Controllers\show_404()
+in APPPATH/Controllers/Pages.php on line 15.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewpage()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 05:30:35 --> Undefined variable $title
+in APPPATH/Views/pages/home.php on line 2.
+ 1 APPPATH/Views/pages/home.php(2): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/home.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Pages.php(7): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->index()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 05:32:13 --> Undefined variable $title
+in APPPATH/Views/pages/home.php on line 2.
+ 1 APPPATH/Views/pages/home.php(2): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/pages/home.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Pages.php(7): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->index()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-06 14:01:10 --> Call to undefined function App\Controllers\show_404()
+in APPPATH/Controllers/Pages.php on line 15.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Pages->viewpage()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()

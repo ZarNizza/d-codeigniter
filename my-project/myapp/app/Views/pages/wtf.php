@@ -1,0 +1,1 @@
+<h3><?php if(isset($title)){echo $title;} else {echo " WTF has no title ";} ?></h3>
