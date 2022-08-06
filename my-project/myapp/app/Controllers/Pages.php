@@ -4,7 +4,8 @@ namespace App\Controllers;
 
 class Pages extends BaseController {
     public function index() {
-        return view( 'pages/wtf' );
+        $data[ 'title' ] = ucfirst( $page );
+        return view( 'templates/header' ).view( 'pages/wtf', $data ).view( 'templates/footer' );
         // return view( 'welcome_message' );
     }
 
@@ -16,7 +17,7 @@ class Pages extends BaseController {
             // throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
             return view( 'templates/header' ).view( 'pages/wtf', $data ).view( 'templates/footer' );
         }
-        echo "<script type='text/javascript'>alert('Yes, it is — $page');</script>";
+        // echo "<script type='text/javascript'>alert('Yes, it is — $page');</script>";
         return view( 'templates/header' ).view( 'pages/'.$page, $data ).view( 'templates/footer' );
     }
 }
