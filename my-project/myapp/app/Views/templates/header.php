@@ -16,11 +16,11 @@
                   <div class="collapse navbar-collapse" id="navbarColor03">
                     <ul class="navbar-nav me-auto">
                        <!--  href may need    echo base_url('url');  -->
+                       <li class="nav-item">
+                         <a class="nav-link" href="/home">Process</a>
+                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/about">About</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/home">pagesHome</a>
                       </li>
 
                     </ul>
