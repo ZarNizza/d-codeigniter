@@ -1,1 +1,1 @@
-<h3><?php if(isset($title)){echo $title;} else {echo " WTF has no title ";} ?></h3>
+<h3><?php if(isset($title)){echo "WTF?<br/>page ".$title." not found.";} else {echo " WTF?<br/>It has no title, open root page. ";} ?></h3>
