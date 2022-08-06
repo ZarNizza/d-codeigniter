@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 class Home extends BaseController {
     public function index() {
-        // return view( 'pages/about' );
-        return view( 'welcome_message' );
+        return view( 'pages/welcome' );
     }
 }
