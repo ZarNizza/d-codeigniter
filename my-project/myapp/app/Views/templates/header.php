@@ -17,22 +17,13 @@
                     <ul class="navbar-nav me-auto">
                        <!--  href may need    echo base_url('url');  -->
                       <li class="nav-item">
-                        <a class="nav-link" href="/pages/viewpage/about">About</a>
+                        <a class="nav-link" href="/pages/about">About</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/pages/home">pagesHome</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/pages/viewpage/wtf">v-wtf</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/pages/wtf">wtf</a>
-                      </li>
+
                     </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-sm-2" type="text" placeholder="Search">
-                      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                   </div>
                 </div>
     </nav>
