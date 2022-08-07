@@ -7,6 +7,10 @@ class Pages extends BaseController {
         return view( 'templates/header' ).view( 'pages/welcome' ).view( 'templates/footer' );
     }
 
+    public function vanilla() {
+        return view( 'pages/vanilla' );
+    }
+
     public function viewpage( $page = 'wtf' ) {
 
         $data[ 'title' ] = ucfirst( $page );
