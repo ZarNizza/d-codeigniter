@@ -1,25 +1,50 @@
-version: '2'
+version: "2"
 
 services:
-  mariadb:
-    image: docker.io/bitnami/mariadb:10.6
+  cidb:
+    container_name: cidb
+    image: mysql
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./my-project/cidbdata:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
     environment:
-      # ALLOW_EMPTY_PASSWORD is recommended only for development.
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_USER=bn_myapp
-      - MARIADB_DATABASE=bitnami_myapp
-  myapp:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: ci_db
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: 456
+
+  ciapp:
+    container_name: ciapp
     image: docker.io/bitnami/codeigniter:4
     ports:
-      - '8000:8000'
-    environment:
-      # ALLOW_EMPTY_PASSWORD is recommended only for development.
-      - ALLOW_EMPTY_PASSWORD=yes
-      - CODEIGNITER_DATABASE_HOST=mariadb
-      - CODEIGNITER_DATABASE_PORT_NUMBER=3306
-      - CODEIGNITER_DATABASE_USER=bn_myapp
-      - CODEIGNITER_DATABASE_NAME=bitnami_myapp
+      - "8000:8000"
+    links:
+      - cidb
     volumes:
-      - './my-project:/app'
+      - "./my-project:/app"
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - CODEIGNITER_DATABASE_HOST=cidb
+      - CODEIGNITER_DATABASE_PORT_NUMBER=13306
+      - CODEIGNITER_DATABASE_USER=db_user
+      - CODEIGNITER_DATABASE_PASSWORD=456
+      - CODEIGNITER_DATABASE_NAME=ci_db
     depends_on:
-      - mariadb
+      - cidb
+
+  ciphpmyadmin:
+    container_name: cipma
+    image: phpmyadmin
+    ports:
+      - 8081:80
+    links:
+      - cidb
+    restart: always
+    environment:
+      PMA_ARBITRARY: 1
+    depends_on:
+      - cidb
