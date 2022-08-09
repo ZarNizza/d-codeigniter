@@ -7,12 +7,12 @@ services:
     ports:
       - "13306:3306"
     volumes:
-      - ./my-project/cidbdata:/var/lib/mysql
+      - ./my-project/cidb:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
+    # restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 123
-      MYSQL_DATABASE: ci_db
+      MYSQL_DATABASE: cidb
       MYSQL_USER: db_user
       MYSQL_PASSWORD: 456
 
@@ -25,7 +25,7 @@ services:
       - cidb
     volumes:
       - "./my-project:/app"
-    restart: always
+    # restart: always
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
       - CODEIGNITER_DATABASE_HOST=cidb
@@ -43,7 +43,7 @@ services:
       - 8081:80
     links:
       - cidb
-    restart: always
+    # restart: always
     environment:
       PMA_ARBITRARY: 1
     depends_on:
