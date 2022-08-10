@@ -29,7 +29,7 @@ class Pages extends BaseController
  {
     public function index()
  {
-        return view( 'welcome_message' );
+        return view( 'pages/welcome' );
     }
 
     public function view( $page = 'home' )
