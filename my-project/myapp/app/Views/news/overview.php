@@ -1,4 +1,5 @@
 <h2><?= esc($title) ?></h2>
+<p><a href="news/create"><button class="btn btn-primary" >Create New One</button></a></p>
 
 <?php if (! empty($news) && is_array($news)): ?>
 
