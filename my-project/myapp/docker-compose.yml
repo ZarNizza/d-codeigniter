@@ -1,0 +1,55 @@
+version: "3"
+networks:
+  default:
+    external:
+      name: mysql_default
+
+services:
+  # mysql:
+  #   container_name: mysql
+  #   image: mysql:8
+  #   ports:
+  #     - 3306:3306
+  #   volumes:
+  #     - ./my-project/mysql:/var/lib/mysql
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: 123
+  #     MYSQL_DATABASE: cidb
+  #     MYSQL_USER: db_user
+  #     MYSQL_PASSWORD: 456
+  #   # restart: always
+
+  ciapp:
+    container_name: ciapp
+    image: docker.io/bitnami/codeigniter:4
+    ports:
+      - 8000:8000
+    volumes:
+      - ./my-project:/app
+    links:
+      - mysql
+    environment:
+      # - ALLOW_EMPTY_PASSWORD=yes
+      - CODEIGNITER_DATABASE_HOST=mysql
+      - CODEIGNITER_DATABASE_PORT_NUMBER=3306
+      - CODEIGNITER_DATABASE_NAME=cidb
+      - CODEIGNITER_DATABASE_USER=db_user
+      - CODEIGNITER_DATABASE_PASSWORD=456
+
+    # restart: always
+
+  # pma:
+  #   container_name: pma
+  #   image: phpmyadmin
+  #   ports:
+  #     - 8088:80
+  #   environment:
+  #     PMA_ARBITRARY: 1
+  #     # PMA_HOST: db
+  #     # PMA_PORT: 3306
+  #   # depends_on:
+  #   #   - db
+  #   # links:
+  #   #   - db
+  #   # restart: always
