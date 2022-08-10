@@ -60,4 +60,18 @@ class News extends BaseController
         . view( 'news/create' )
         . view( 'templates/footer' );
     }
+
+    public function delete( $id = 0 ) {
+        $model = model( NewsModel::class );
+        $model->delete_news( $id );
+        echo "<script type='text/javascript'>alert('OK, the News deleted.');</script>";
+        return redirect( '/news' );
+    }
+
+    public function edit( $id = 0 ) {
+        $model = model( NewsModel::class );
+        $model->edit_news( $id );
+        echo "<script type='text/javascript'>alert('OK, the News edited.');</script>";
+        return redirect( '/news' );
+    }
 }
