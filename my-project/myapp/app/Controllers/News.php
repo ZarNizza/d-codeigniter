@@ -50,8 +50,9 @@ class News extends BaseController
                 'slug'  => url_title( $this->request->getPost( 'title' ), '-', true ),
                 'body'  => $this->request->getPost( 'body' ),
             ] );
+            echo "<script type='text/javascript'>alert('OK, the News created.');</script>";
 
-            return view( 'news/success' );
+            return redirect( '/news' );
         }
 
         return view( 'templates/header', [ 'title' => 'Create a news item' ] )
