@@ -35,6 +35,7 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('news/update/(:segment)', 'News::update/$1');
 $routes->get('news/delete/(:segment)', 'News::delete/$1');
 $routes->get('news/edit/(:segment)', 'News::edit/$1');
 $routes->match(['get', 'post'], 'news/create', 'News::create');

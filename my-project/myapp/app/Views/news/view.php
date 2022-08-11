@@ -3,7 +3,7 @@
 <hr>
   <div class="row justify-content-start">
     <div class="col">
-      <a href="/news/edit/<?= $news['id'] ?>" /><button type="button" class="btn btn-info">Edit</button></a>
+      <a href="/news/edit/<?= $news['slug'] ?>" /><button type="button" class="btn btn-info">Edit</button></a>
     </div>
     <div class="col">
       <form action="/news/delete/<?= $news['id'] ?>" method="get">

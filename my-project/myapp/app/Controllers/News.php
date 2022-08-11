@@ -68,10 +68,43 @@ class News extends BaseController
         return redirect( '/news' );
     }
 
-    public function edit( $id = 0 ) {
+    public function edit( $slug ) {
         $model = model( NewsModel::class );
-        $model->edit_news( $id );
-        echo "<script type='text/javascript'>alert('OK, the News edited.');</script>";
+
+        $data[ 'news' ] = $model->getNews( $slug );
+
+        if ( empty( $data[ 'news' ] ) ) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException( 'Cannot find the news item: ' . $slug );
+        }
+
+        $data[ 'title' ] = 'Edit this item';
+
+        return view( 'templates/header' )
+        . view( 'news/edit', $data )
+        . view( 'templates/footer' );
+    }
+
+    public function update( $slug )
+ {
+        $model = model( NewsModel::class );
+
+        if ( $this->request->getMethod() === 'post' && $this->validate( [
+            'title' => 'required|min_length[3]|max_length[255]',
+            'slug' => 'required|min_length[3]|max_length[25]',
+            'body' => 'required',
+        ] ) ) {
+            $model->
+            update( $id, [
+                'title' => $this->request->getPost( 'title' ),
+                'slug'  => url_title( $this->request->getPost( 'title' ), '-', true ),
+                'body'  => $this->request->getPost( 'body' ),
+            ] );
+            echo "<script type='text/javascript'>alert('OK, the News updated.');</script>";
+            return redirect( '/news' );
+
+        }
+
+        echo "<script type='text/javascript'>alert('Oops... x3-update-fail!');</script>";
         return redirect( '/news' );
     }
 }
