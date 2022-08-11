@@ -1,8 +1,8 @@
 version: "3"
-networks:
-  default:
-    external:
-      name: mysql_default
+# networks:
+#   default:
+#     external:
+#       name: mysql
 
 services:
   # mysql:
@@ -26,9 +26,9 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./my-project:/app
-    links:
-      - mysql
+      - .:/app
+    # links:
+    #   - mysql
     environment:
       # - ALLOW_EMPTY_PASSWORD=yes
       - CODEIGNITER_DATABASE_HOST=mysql

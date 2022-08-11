@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  ciapp:
+    container_name: ciapp
+    image: docker.io/bitnami/codeigniter:4
+    ports:
+      - 8000:8000
+    volumes:
+      - ./my-project:/app
+    # depends_on:
+    #   - mysql
+    environment:
+      # - ALLOW_EMPTY_PASSWORD=yes
+      - CODEIGNITER_DATABASE_HOST=mysql
+      - CODEIGNITER_DATABASE_PORT_NUMBER=3306
+      - CODEIGNITER_DATABASE_NAME=cidb
+      - CODEIGNITER_DATABASE_USER=db_user
+      - CODEIGNITER_DATABASE_PASSWORD=456
+    # restart: always

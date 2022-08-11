@@ -1,0 +1,6 @@
+my-project/mysql> docker-compose up (mysql+pma)
+my-project/myapp> docker-compose up (in fact: my-project>, lite .yml with ciapp only)
+
+docker network create mvn-net
+docker network connect mvn-net mysql
+docker network connect mvn-net ciapp
