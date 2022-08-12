@@ -29,7 +29,9 @@ class Pages extends BaseController
  {
     public function index()
  {
-        return view( 'pages/welcome' );
+        return view( 'templates/header' )
+        . view( 'pages/welcome' )
+        . view( 'templates/footer' );
     }
 
     public function view( $page = 'home' )

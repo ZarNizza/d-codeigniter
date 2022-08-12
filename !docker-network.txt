@@ -4,3 +4,7 @@ my-project/myapp> docker-compose up (in fact: my-project>, lite .yml with ciapp 
 docker network create mvn-net
 docker network connect mvn-net mysql
 docker network connect mvn-net ciapp
+
+
+
+docker ciphp error 137 -> mysql not enabled

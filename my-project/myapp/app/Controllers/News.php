@@ -53,7 +53,7 @@ class News extends BaseController
             ] );
             echo "<script type='text/javascript'>alert('OK, the News created.');</script>";
 
-            return redirect( '/news' );
+            return redirect()->route( 'n_base' );
         }
 
         return view( 'templates/header', [ 'title' => 'Create a news item' ] )
@@ -65,7 +65,7 @@ class News extends BaseController
         $model = model( NewsModel::class );
         $model->delete_news( $id );
         echo "<script type='text/javascript'>alert('OK, the News deleted.');</script>";
-        return redirect( '/news' );
+        return redirect()->route( 'n_base' );
     }
 
     public function edit( $slug ) {
@@ -84,8 +84,9 @@ class News extends BaseController
         . view( 'templates/footer' );
     }
 
-    public function update( $slug )
+    public function update( $id )
  {
+        echo "<script type='text/javascript'>alert('inside update');</script>";
         $model = model( NewsModel::class );
 
         if ( $this->request->getMethod() === 'post' && $this->validate( [
@@ -96,15 +97,17 @@ class News extends BaseController
             $model->
             update( $id, [
                 'title' => $this->request->getPost( 'title' ),
-                'slug'  => url_title( $this->request->getPost( 'title' ), '-', true ),
+                'slug'  => url_title( $this->request->getPost( 'slug' ), '-', true ),
                 'body'  => $this->request->getPost( 'body' ),
             ] );
-            echo "<script type='text/javascript'>alert('OK, the News updated.');</script>";
-            return redirect( '/news' );
+            echo "<script type='text/javascript'>alert('OK, the News updated');</script>";
+            // return redirect( ':'.$_SERVER[ 'SERVER_PORT' ].'/news' );
+            return redirect()->route( 'n_base' );
 
         }
 
-        echo "<script type='text/javascript'>alert('Oops... x3-update-fail!');</script>";
-        return redirect( '/news' );
+        echo "<script type='text/javascript'>alert('Oops... x3-update-fail!, id='.$id);</script>";
+        return redirect()->route( 'n_base' );
+
     }
 }

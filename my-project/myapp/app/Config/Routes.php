@@ -25,7 +25,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-$routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -35,16 +35,16 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('news/update/(:segment)', 'News::update/$1');
-$routes->get('news/delete/(:segment)', 'News::delete/$1');
-$routes->get('news/edit/(:segment)', 'News::edit/$1');
-$routes->match(['get', 'post'], 'news/create', 'News::create');
-$routes->get('news/(:segment)', 'News::view/$1');
-$routes->get('news', 'News::index');
+$routes->get('/', 'Pages::index', ['as' => 'ci_base']);
+$routes->post('news/update/(:segment)', 'News::update/$1', ['as' => 'n_up']);
+$routes->get('news/delete/(:segment)', 'News::delete/$1', ['as' => 'n_del']);
+$routes->get('news/edit/(:segment)', 'News::edit/$1', ['as' => 'n_ed']);
+$routes->match(['get', 'post'], 'news/create', 'News::create', ['as' => 'n_cre']);
+$routes->get('news/(:segment)', 'News::view/$1', ['as' => 'n_view']);
+$routes->get('news', 'News::index', ['as' => 'n_base']);
 $routes->get('pages/(:segment)', 'Pages::viewpage/$1');
-$routes->get('pages', 'Pages::index');
-$routes->get('/(:segment)', 'Pages::viewpage/$1');
-$routes->get('/', 'Pages::index');
+$routes->get('pages', 'Pages::index', ['as' => 'p_base']);
+// $routes->get('/(:segment)', 'Pages::viewpage/$1');
 
 /*
  * --------------------------------------------------------------------

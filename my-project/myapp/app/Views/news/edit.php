@@ -3,9 +3,9 @@
 <?= session()->getFlashdata('error') ?>
 <?= service('validation')->listErrors() ?>
 
-<form action="/news/update" method="post">
+<form action="/news/update/<?= $news['id'] ?>" method="post">
     <?= csrf_field() ?>
-
+<input type="hidden" name="id" value="<?= $news['id'] ?>" />
     <label for="title" class="form-check-label">Title</label>
     <input type="input" name="title"  class="form-control" value="<?= $news['title'] ?>" placeholder="Enter header" /><br />
 

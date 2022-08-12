@@ -28,4 +28,10 @@ class NewsModel extends Model
         echo $id;
         return true;
     }
+
+    public function update_news( $id ) {
+        // $this->where( 'id', $id )->delete();
+        echo 'UpdateModel id='.$id;
+        return true;
+    }
 }
